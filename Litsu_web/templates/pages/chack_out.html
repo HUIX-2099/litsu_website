@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+    <title>{% block title %}Chack Out page{% endblock %}</title>
+
+    <div class="container" style="margin: 40px;">
+        <div class="text-center rounded shadow-lg position-relative">
+            <!-- Back Button -->
+            <a href="javascript:history.back()" class="btn btn-outline-primary position-absolute" style="top: 20px; right: 20px;">
+                ← Back
+            </a>
+
+        </div>
+    </div>
+    
+    <div class="kingster-page-title-wrap  kingster-style-medium kingster-left-align">
+	   
+
+        <div class="kingster-page-wrapper" id="kingster-page-wrapper">
+	        <div class="kingster-content-container kingster-container">
+		        <div class="kingster-content-area kingster-item-pdlr kingster-sidebar-style-none clearfix">
+			        <div class="woocommerce">
+				        {% include 'includes/error.html' %}
+                        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="" enctype="multipart/form-data" aria-label="Checkout">
+
+                            <div class="col2-set" id="customer_details">
+                                <div class="col-1">
+                                    <div class="woocommerce-billing-fields">
+                                        <h3>Billing details</h3>
+                                        <div class="woocommerce-billing-fields__field-wrapper">
+                                            <div class="form-row">
+                                                                        <div class="frm_form_field">
+                                                                            <label for="field_xnztr">First Name <span class="required">*</span></label>
+                                                                            <input type="text" id="field_xnztr" name="first_name" placeholder="Enter your first name" required/>
+                                                                        </div>
+
+                                                                        <div class="frm_form_field">
+                                                                            <label for="field_8zg4e">Last Name <span class="required">*</span></label>
+                                                                            <input type="text" id="field_8zg4e" name="last_name" placeholder="Enter your last name" required/>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+
+
+                                            <div class="form-row form-row-wide" id="billing_company_field" data-priority="30">
+                                                <label for="billing_company" class=""> Company name&nbsp; <span class="optional">(optional)</span></label>
+                                                <span class="woocommerce-input-wrapper">
+                                                    <input type="text" class="input-text" name="billing_company" id="billing_company" placeholder="" value="" autocomplete="organization" />
+                                                </span>
+                                            </div>
+
+                                            <div class="form-row form-row-wide address-field update_totals_on_change validate-required" id="billing_country_field" data-priority="40">
+                                                <label for="billing_country" class="required_field">Country / Region&nbsp;<span class="required" aria-hidden="true">*</span></label>
+                                                <span class="woocommerce-input-wrapper">
+                                                    <select name="billing_country" id="billing_country" class="country_to_state country_select " aria-required="true" autocomplete="country" data-placeholder="Select a country / region&hellip;" data-label="Country / Region">
+                                                        <option value="">Select a country / region&hellip;</option>
+                                                        <option value="AF">Afghanistan</option> 
+                                                    </select>
+                                                </span>
+                                            </div>
+                                            
+                                            <p class="form-row form-row-wide address-field validate-required"
+                                                id="billing_address_1_field" data-priority="50"><label for="billing_address_1"
+                                                    class="required_field">Street address&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="text" class="input-text "
+                                                        name="billing_address_1" id="billing_address_1"
+                                                        placeholder="House number and street name" value="" aria-required="true"
+                                                        autocomplete="address-line1" /></span></p>
+                                            <p class="form-row form-row-wide address-field" id="billing_address_2_field"
+                                                data-priority="60"><label for="billing_address_2"
+                                                    class="screen-reader-text">Apartment, suite, unit, etc.&nbsp;<span
+                                                        class="optional">(optional)</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="text" class="input-text "
+                                                        name="billing_address_2" id="billing_address_2"
+                                                        placeholder="Apartment, suite, unit, etc. (optional)" value=""
+                                                        autocomplete="address-line2" /></span></p>
+                                            <p class="form-row form-row-wide address-field validate-required"
+                                                id="billing_city_field" data-priority="70"><label for="billing_city"
+                                                    class="required_field">Town / City&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="text" class="input-text "
+                                                        name="billing_city" id="billing_city" placeholder="" value=""
+                                                        aria-required="true" autocomplete="address-level2" /></span></p>
+                                            <p class="form-row form-row-wide address-field validate-required validate-state"
+                                                id="billing_state_field" data-priority="80"><label for="billing_state"
+                                                    class="required_field">State / County&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><select name="billing_state"
+                                                        id="billing_state" class="state_select " aria-required="true"
+                                                        autocomplete="address-level1"
+                                                        data-placeholder="Select an option&hellip;" data-input-classes=""
+                                                        data-label="State / County">
+                                                        <option value="">Select an option&hellip;</option>
+                                                        <option value="BM">Bomi</option>
+                                                        <option value="BN">Bong</option>
+                                                        <option value="GA">Gbarpolu</option>
+                                                        <option value="GB">Grand Bassa</option>
+                                                        <option value="GC">Grand Cape Mount</option>
+                                                        <option value="GG">Grand Gedeh</option>
+                                                        <option value="GK">Grand Kru</option>
+                                                        <option value="LO">Lofa</option>
+                                                        <option value="MA">Margibi</option>
+                                                        <option value="MY">Maryland</option>
+                                                        <option value="MO">Montserrado</option>
+                                                        <option value="NM">Nimba</option>
+                                                        <option value="RV">Rivercess</option>
+                                                        <option value="RG">River Gee</option>
+                                                        <option value="SN">Sinoe</option>
+                                                    </select></span></p>
+                                            <p class="form-row form-row-wide address-field validate-required validate-postcode"
+                                                id="billing_postcode_field" data-priority="90"><label for="billing_postcode"
+                                                    class="required_field">Postcode / ZIP&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="text" class="input-text "
+                                                        name="billing_postcode" id="billing_postcode" placeholder="" value=""
+                                                        aria-required="true" autocomplete="postal-code" /></span></p>
+                                            <p class="form-row form-row-wide validate-required validate-phone"
+                                                id="billing_phone_field" data-priority="100"><label for="billing_phone"
+                                                    class="required_field">Phone&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="tel" class="input-text "
+                                                        name="billing_phone" id="billing_phone" placeholder="" value=""
+                                                        aria-required="true" autocomplete="tel" /></span></p>
+                                            <p class="form-row form-row-wide validate-required validate-email"
+                                                id="billing_email_field" data-priority="110"><label for="billing_email"
+                                                    class="required_field">Email address&nbsp;<span class="required"
+                                                        aria-hidden="true">*</span></label><span
+                                                    class="woocommerce-input-wrapper"><input type="email" class="input-text "
+                                                        name="billing_email" id="billing_email" placeholder="" value=""
+                                                        aria-required="true" autocomplete="email" /></span></p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-2">
+                                    <div class="woocommerce-shipping-fields">
+                                    </div>
+                                    <div class="woocommerce-additional-fields">
+
+
+
+                                        <h3>Additional information</h3>
+
+
+                                        <div class="woocommerce-additional-fields__field-wrapper">
+                                            <p class="form-row notes" id="order_comments_field" data-priority=""><label
+                                                    for="order_comments" class="">Order notes&nbsp;<span
+                                                        class="optional">(optional)</span></label><span
+                                                    class="woocommerce-input-wrapper"><textarea name="order_comments"
+                                                        class="input-text " id="order_comments"
+                                                        placeholder="Notes about your order, e.g. special notes for delivery."
+                                                        rows="2" cols="5"></textarea></span></p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <h3 id="order_review_heading">Your order</h3>
+
+
+                            <div id="order_review" class="woocommerce-checkout-review-order">
+                                <table class="shop_table woocommerce-checkout-review-order-table">
+                                    
+                                    <tfoot>
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td>
+                                                <strong>
+                                                    <span class="woocommerce-Price-amount amount">
+                                                        <bdi> 
+                                                            <span class="woocommerce-Price-currencySymbol">&pound;</span>  560.00
+                                                        </bdi>
+                                                    </span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+
+
+                                    </tfoot>
+                                </table>
+                                <div id="payment" class="woocommerce-checkout-payment">
+                                    <ul class="wc_payment_methods payment_methods methods">
+                                        <li>
+                                            <div class="woocommerce-info" role="status">
+                                                Sorry, it seems that there are no available payment methods. Please contact us
+                                                if you require assistance or wish to make alternate arrangements. </div>
+                                        </li>
+                                    </ul>
+                                    <div class="form-row place-order">
+                                        <noscript>
+                                            Since your browser does not support JavaScript, or it is disabled, please ensure you
+                                            click the <em>Update Totals</em> button before placing your order. You may be
+                                            charged more than the amount stated above if you fail to do so. <br /><button
+                                                type="submit" class="button alt" name="woocommerce_checkout_update_totals"
+                                                value="Update totals">Update totals</button>
+                                        </noscript>
+
+                                        <div class="woocommerce-terms-and-conditions-wrapper">
+                                            <div class="woocommerce-privacy-policy-text"></div>
+                                        </div>
+
+
+                                        <button type="submit" class="button alt" name="woocommerce_checkout_place_order"
+                                            id="place_order" value="Place order" data-value="Place order">Place order</button>
+
+                                        <input type="hidden" id="woocommerce-process-checkout-nonce"
+                                            name="woocommerce-process-checkout-nonce" value="2d43ace7d6" /><input type="hidden"
+                                            name="_wp_http_referer" value="/kingster/checkout/" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+			        </div>
+		        </div>
+	        </div>
+        </div>
+{% endblock content %}
